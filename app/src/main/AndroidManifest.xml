@@ -2,14 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.sensor">
 
-    <uses-feature android:name="android.hardware.bluetooth" />
-    <uses-feature android:name="android.hardware.camera" />
+
+
     <uses-feature
         android:name="android.hardware.sensor.proximity"
         android:required="true" />
-    <uses-feature
-        android:name="android.hardware.sensor.gyroscope"
-        android:required="true" />
+
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -18,8 +19,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Sensor">
-        <activity android:name=".AccelerometherActivity"></activity>
-        <activity android:name=".GyroscopeActivity" />
+        <activity android:name=".AccelerometherActivity" />
         <activity android:name=".ProximitySensorActivity" />
         <activity android:name=".LightSensorActivity" />
         <activity android:name=".MainActivity">

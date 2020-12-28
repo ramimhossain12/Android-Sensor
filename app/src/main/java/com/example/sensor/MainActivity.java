@@ -1,6 +1,7 @@
 package com.example.sensor;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,9 +10,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity  {
 
-
-     private TextView lighttextView, proxtexview ,accelTextView, gTextView;
-
+     private CardView acView,lighttextView, proxtexview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,8 +19,8 @@ public class MainActivity extends AppCompatActivity  {
 
         lighttextView = findViewById(R.id.lightSensotTextView);
         proxtexview = findViewById(R.id.ProximitySensorTextView);
-        accelTextView = findViewById(R.id.accelerometertextView);
-        gTextView = findViewById(R.id.grocpTextVIew);
+
+        acView = findViewById(R.id.cardAcID);
 
 
 
@@ -40,7 +39,7 @@ public class MainActivity extends AppCompatActivity  {
                 startActivity(intent);
             }
         });
-        accelTextView.setOnClickListener(new View.OnClickListener() {
+        acView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,AccelerometherActivity.class);
@@ -48,13 +47,7 @@ public class MainActivity extends AppCompatActivity  {
             }
         });
 
-        gTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,AccelerometherActivity.class);
-                startActivity(intent);
-            }
-        });
+
     }
 
 
